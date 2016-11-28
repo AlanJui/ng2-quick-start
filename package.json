@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
-    "e2e": "tsc && concurrently \"http-server -s\" \"protractor protractor.config.js\" --kill-others --success first",
+    "start": "tsc --noUnusedLocals --noUnusedParameters && concurrently \"tsc -w --noUnusedLocals --noUnusedParameters\" \"lite-server\" ",
+    "e2e": "tsc --noUnusedLocals --noUnusedParameters && concurrently \"http-server -s\" \"protractor protractor.config.js\" --kill-others --success first",
     "lint": "tslint ./app/**/*.ts -t verbose",
     "lite": "lite-server",
     "pree2e": "webdriver-manager update",
-    "test": "tsc && concurrently \"tsc -w\" \"karma start karma.conf.js\"",
-    "test-once": "tsc && karma start karma.conf.js --single-run",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w"
+    "test": "tsc --noUnusedLocals --noUnusedParameters && concurrently \"tsc -w\" \"karma start karma.conf.js\"",
+    "test-once": "tsc --noUnusedLocals --noUnusedParameters && karma start karma.conf.js --single-run",
+    "tsc": "tsc --noUnusedLocals --noUnusedParameters",
+    "tsc:w": "tsc -w --noUnusedLocals --noUnusedParameters"
   },
   "keywords": [],
   "author": "",
